@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="content">
+  <h1 class="title"><b>{{ .Title | title }}</b></h1>
+  {{ range.Pages -}}
+  <h2 class="subtitle">{{ .Title | title }}</h2>
+  <div class="text">
+    <b>{{ .Date | dateFormat "January 2, 2006" }} - </b>
+    {{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}
+    <br>
+    <a href="{{ .RelPermalink }}">read more</a>
+  </div>
+  {{- end }}
+</section>
+<section class="actions">
+  <a class="action"
+     href="/">Homepage</a>
+</section>
+{{ end }}

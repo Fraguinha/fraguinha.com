@@ -1,0 +1,12 @@
+<section class="actions">
+  {{ with .Site.Params.cv -}}
+  <a class="action"
+     href="{{ . }}">Review My CV</a>
+  {{- end }}
+  <a class="action"
+     href="/post">Read Posts</a>
+  {{ with .Site.Params.pgp -}}
+  <a class="action"
+     href="{{ . }}">PGP Key</a>
+  {{- end }}
+</section>

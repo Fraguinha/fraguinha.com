@@ -1,0 +1,49 @@
+title = 'Fraguinha'
+baseURL = 'https://fraguinha.com/'
+languageCode = 'en-us'
+
+enableGitInfo = true
+disqusShortname = 'Fraguinha'
+googleAnalytics = 'G-HQ78S05TTM'
+disableKinds = ['taxonomy', 'taxonomyTerm']
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    tabWidth = 2
+    style = ''
+
+[privacy]
+  [privacy.disqus]
+    disable = false
+  [privacy.googleAnalytics]
+    disable = false
+    anonymizeIP = true
+    respectDoNotTrack = true
+  [privacy.instagram]
+    disable = false
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+  [privacy.vimeo]
+    disable = false
+    enableDNT = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
+[params]
+  firstName = 'João'
+  lastName = 'Fraga'
+  jobTitle = 'Software Engineer'
+  bio = 'I am very passionate for my field and have several years of programming experience'
+  email = 'joao@fraguinha.com'
+  github = 'Fraguinha'
+  gitlab = 'Fraguinha'
+  linkedin = 'Fraguinha'
+  twitter = 'Fraguinha42'
+  copyright = 'Fraguinha'
+  picture = '/fraguinha.png'
+  favicon = '/favicon.ico'
+  pgp = '/joao-fraga.asc'
+  cv = '/cv.pdf'
