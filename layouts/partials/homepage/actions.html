@@ -1,0 +1,14 @@
+<section class="actions">
+  {{ with .Site.Params.cv -}}
+  <a class="action"
+     href="{{ . }}">CV</a>
+  {{- end }}
+  {{ with .Site.Params.blog -}}
+  <a class="action"
+     href="{{ . }}">Posts</a>
+  {{- end }}
+  {{ with .Site.Params.pgp -}}
+  <a class="action"
+     href="{{ . }}">PGP</a>
+  {{- end }}
+</section>

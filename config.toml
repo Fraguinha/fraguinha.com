@@ -1,0 +1,55 @@
+title = "Fraguinha: João Fraga's personal website"
+baseURL = "https://fraguinha.com/"
+languageCode = "en-us"
+
+relativeURLs = true
+enableGitInfo = true
+enableRobotsTXT = true
+disqusShortname = "Fraguinha"
+googleAnalytics = "G-HQ78S05TTM"
+disableKinds = ["taxonomy"]
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    tabWidth = 2
+    style = ""
+  [markup.goldmark.renderer]
+    unsafe = true # Allow HTML in md files
+
+[privacy]
+  [privacy.disqus]
+    disable = false
+  [privacy.googleAnalytics]
+    disable = false
+    anonymizeIP = true
+    respectDoNotTrack = true
+  [privacy.instagram]
+    disable = false
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+  [privacy.vimeo]
+    disable = false
+    enableDNT = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
+[params]
+  description = "Software Engineer / Computer Scientist. Curious problem solver."
+  favicon = "/favicon.ico"
+  picture = "/fraguinha.png"
+  firstName = "João"
+  lastName = "Fraga"
+  nickname = "Fraguinha"
+  bio = "Currently working as a Software Engineer at Feedzai"
+  linkedin = "Fraguinha"
+  github = "Fraguinha"
+  email = "joao@fraguinha.com"
+  sms = "+351934686671"
+  rss = "/index.xml"
+  cv = "/cv.pdf"
+  blog = "/post"
+  pgp = "/joao-fraga.asc"
+  copyright = ""
