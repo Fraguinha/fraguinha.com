@@ -1,0 +1,71 @@
+@media (prefers-color-scheme: dark) {
+
+  html,
+  body {
+    background-color: #222;
+    color: #fff;
+  }
+
+  code {
+    background-color: #404040;
+  }
+
+  textarea {
+    color: #fff;
+    background-color: rgb(82, 82, 82);
+    border: 1px solid #666;
+    outline: none;
+  }
+
+  input {
+    color: #fff;
+    background-color: rgb(82, 82, 82);
+    border: 1px solid #666;
+    outline: none;
+  }
+
+  button {
+    color: #fff;
+    background-color: rgb(82, 82, 82);
+    border: 1px solid #666;
+    outline: none;
+  }
+
+  .footer {
+    color: #bbb;
+    border-top: 1px solid #333;
+  }
+
+  .title {
+    color: #fff;
+  }
+
+  .subtitle {
+    color: #fff;
+  }
+
+  .profile .name {
+    color: #fff;
+  }
+
+  .content .text a:hover {
+    color: #fff;
+  }
+
+  .contacts .contact {
+    background: #2f2f2f;
+    color: #acacac;
+  }
+
+  .contacts .contact:hover {
+    box-shadow: 0 0 1px 7px rgba(182, 38, 43, 0.45);
+  }
+
+  .actions .action {
+    color: #fff;
+  }
+
+  .actions .action:hover {
+    color: #999;
+  }
+}
