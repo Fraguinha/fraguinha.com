@@ -1,0 +1,16 @@
+{
+  "name": "fraguinha.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-tw": "npx tailwindcss -i ./assets/tailwind.css -o ./static/css/tailwind.css",
+    "build": "npm run build-tw"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
