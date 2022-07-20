@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="content">
+  <h1 class="title"><b>{{ index (split .Title "-") 1 }}</b></h1>
+  <p>Last edited: <b>{{ .Lastmod.Local.Format "January 2, 2006" }} - </b>
+    {{ .ReadingTime}} {{ if gt .ReadingTime 1 }}minutes{{ else }}minute{{ end }} read</p>
+  <h2 class="subtitle">Description</h2>
+  <div class="text">
+    {{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}
+  </div>
+  <h2 class="subtitle">Content</h2>
+  <div class="text">
+    {{ .Content -}}
+  </div>
+</section>
+<section class="actions">
+  {{ if .Prev -}}
+  {{- with .Prev -}}
+  <a class="action"
+     href="{{ .RelPermalink }}">&lt; Prev: {{ index (split .Title "-") 0 }}</a>
+  {{- end -}}
+  {{- end -}}
+  <a class="action"
+     href="./..">Back</a>
+  {{- if .Next -}}
+  {{- with .Next -}}
+  <a class="action"
+     href="{{ .RelPermalink }}">Next: {{ index (split .Title "-") 0 }} &gt;</a>
+  {{- end -}}
+  {{- end }}
+</section>
+{{ template "_internal/disqus.html" . }}
+{{ end }}
