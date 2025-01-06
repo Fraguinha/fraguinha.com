@@ -1,0 +1,45 @@
+name: LaTeX
+on:
+  workflow_call:
+
+jobs:
+  compile:
+    runs-on: fraguinha-amd64
+    env:
+      TECTONIC_VERSION: 0.16.9
+      TECTONIC_SHA256: 60b13a0826ae7ad9ce34b4a2df06bff2cfcfa6dda8a915477c0cbb84e1a4a902
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - name: Cache Tectonic bundle
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-bundle
+
+      - name: Set up Tectonic
+        run: |
+          archive="${RUNNER_TEMP}/tectonic.tar.gz"
+          bin_dir="${RUNNER_TEMP}/tectonic"
+          curl --fail --location --retry 3 --silent --show-error \
+            --output "${archive}" \
+            "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%40${TECTONIC_VERSION}/tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-musl.tar.gz"
+          echo "${TECTONIC_SHA256}  ${archive}" | sha256sum --check -
+          mkdir -p "${bin_dir}"
+          tar -xzf "${archive}" -C "${bin_dir}"
+          echo "${bin_dir}" >> "${GITHUB_PATH}"
+
+      - name: Compile LaTeX
+        run: tectonic ./cv/cv.tex
+
+      - name: Move PDF to Static
+        run: mv ./cv/cv.pdf static/cv.pdf
+
+      - name: Upload CV artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: cv-pdf
+          path: ./static/cv.pdf
