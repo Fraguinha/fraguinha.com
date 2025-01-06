@@ -1,0 +1,51 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="content-type"
+        content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge" />
+  <meta name="description"
+        content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}{{ end }}">
+  <title>{{ if not .IsHome }}{{ .Title | title }} | {{ end }}{{ .Site.Title }}</title>
+  <script src="https://kit.fontawesome.com/acea485435.js"
+          crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Jura:400,700">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,700">
+  <link rel="canonical"
+        href="{{ .Permalink }}">
+  <link rel='stylesheet'
+        type='text/css'
+        href='/css/tailwind.css'>
+  {{ $css := resources.Match "css/*.css" | resources.Concat "style.css" | minify -}}
+  <link rel='stylesheet'
+        type='text/css'
+        href='{{ $css.Permalink }}'>
+  {{ with .Site.Params.favicon  -}}
+  <link rel="icon"
+        href="{{ . }} ">
+  {{-  end }}
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script async
+          src="https://www.googletagmanager.com/gtag/js?id=G-HQ78S05TTM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HQ78S05TTM');
+  </script>
+</head>
