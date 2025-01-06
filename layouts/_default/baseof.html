@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+
+{{- partial "head.html" . -}}
+
+<body>
+  {{- if .IsHome -}}
+  <div id="content"
+       class="homepage">
+  {{- else -}}
+  <div id="content"
+       class="wrap">
+  {{- end -}}
+  {{- block "main" . }}{{- end }}
+  </div>
+  {{- if not .IsHome -}}
+  {{- partial "footer.html" . -}}
+  {{- end -}}
+</body>
+
+</html>

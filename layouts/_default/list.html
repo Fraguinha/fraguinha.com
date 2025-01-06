@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="content">
+  <h1 class="title"><b>{{ .Title | title }}</b></h1>
+  <br>
+  {{ range $index, $page := .Paginator.Pages -}}
+  {{- if lt $index 3 -}}
+  <a href="{{ .RelPermalink }}">
+    <h2 class="subtitle">{{ index (split .Title "-") 1 }}</h2>
+  </a>
+  <div class="text">
+    <b>{{ .Date | dateFormat "January 2, 2006" }} - </b>
+    {{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}
+    <br>
+    <a href="{{ .RelPermalink }}">read more</a>
+  </div>
+  {{- else -}}
+  {{- if eq $index 3 -}}
+  <b>Older posts</b>
+  <br>
+  <br>
+  {{- end -}}
+  <div class="text">
+    <b>{{ .Date | dateFormat "January 2, 2006" }}</b> -
+    <a href="{{ .RelPermalink }}">
+      {{ index (split .Title "-") 0 }} -
+      {{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}
+    </a>
+
+  </div>
+  {{- end -}}
+  <br>
+  {{- end }}
+</section>
+<section class="actions">
+  <a class="action"
+     href="/">Homepage</a>
+</section>
+{{ end }}
