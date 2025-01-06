@@ -1,0 +1,28 @@
+name: LaTeX
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up tectonic
+        uses: wtfjoke/setup-tectonic@v3
+
+      - name: Compile LaTeX
+        run: tectonic ./cv/cv.tex
+
+      - name: Move PDF to Static
+        run: mv ./cv/cv.pdf static/cv.pdf
+
+      - name: Save CV
+        uses: actions/cache/save@v4
+        with:
+          path: ./static/cv.pdf
+          key: ${{ runner.os }}-CV-${{ hashFiles('**/*.tex', '**/*.cls') }}
