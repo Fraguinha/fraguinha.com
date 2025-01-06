@@ -10,7 +10,8 @@ body {
   font-size: 1rem;
 }
 
-h1 {
+h1,
+#contents ~ h2 {
   font-size: 1rem;
   color: #b6262c;
   margin-top: 1em;
@@ -19,7 +20,9 @@ h1 {
 }
 
 h2,
-h3 {
+h3,
+#contents ~ h4,
+#contents ~ h5 {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   font-weight: bold;
@@ -272,6 +275,81 @@ button {
 
 .content .text p code {
   padding: 0.1rem 0.2rem;
+}
+
+.collection-decision-tree {
+  --decision-indent: clamp(0.6em, 1.4vw, 1em);
+  margin: 1em 0 1.5em;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.collection-decision-tree a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.collection-decision-tree .decision-node {
+  display: contents;
+}
+
+.collection-decision-tree .decision-question {
+  font-weight: 600;
+}
+
+.collection-decision-tree .decision-answers {
+  list-style: none;
+  margin: 0.3em 0 0;
+  padding: 0;
+}
+
+.collection-decision-tree .decision-answers > li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0.45em var(--decision-indent);
+  border-left: 1px solid currentColor;
+}
+
+.collection-decision-tree .decision-answers > li::before {
+  content: "";
+  position: absolute;
+  top: 0.775em;
+  left: -1px;
+  width: calc(var(--decision-indent) - 0.15em);
+  border-top: 1px solid currentColor;
+}
+
+.collection-decision-tree .decision-answers > li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.collection-decision-tree .decision-answers > li:last-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1px;
+  height: 0.775em;
+  border-left: 1px solid currentColor;
+}
+
+.collection-decision-tree .decision-answer {
+  margin-right: 0.2em;
+  font-weight: 700;
+}
+
+.collection-decision-tree .decision-leaf > a {
+  font-weight: 600;
+}
+
+.collection-decision-tree .decision-note {
+  display: block;
+  margin-top: 0.2em;
+}
+
+.collection-decision-tree > .decision-note {
+  margin-top: 0.75em;
 }
 
 .wrap .actions .action {
