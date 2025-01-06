@@ -1,0 +1,12 @@
+<section class="profile">
+  <div class="portrait">
+    <div class="spinner"></div>
+    <div class="img"
+         style="background-image: url('{{ .Site.Params.picture }}')"></div>
+  </div>
+  <h1 class="name">{{ .Site.Params.firstName }} <b>{{ .Site.Params.lastName }}</b></h1>
+  <h2 class="title">{{ .Site.Params.nickname }}</h2>
+  <span class="bio">
+    <p>{{ .Site.Params.bio }}</p>
+  </span>
+</section>

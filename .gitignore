@@ -1,0 +1,28 @@
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+/.hugo_build.lock
+
+# Node modules
+/node_modules/
+
+# Tailwind CSS build
+/static/css/tailwind.css
+
+# Latex
+/cv/*.aux
+/cv/*.fdb_latexmk
+/cv/*.fls
+/cv/*.log
+/cv/*.out
+/cv/*.pdf
+/cv/*.xdv
