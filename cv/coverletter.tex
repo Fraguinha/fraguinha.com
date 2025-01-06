@@ -1,0 +1,104 @@
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Colors: emerald, skyblue, red, pink, orange nephritis, concrete, darknight
+\colorlet{default}{red}
+% Uncomment if you would like to specify your own color
+% \definecolor{default}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with default color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo[circle,noedge,left]{./images/fraguinha.png}
+
+\name{João}{Fraga}
+\position{Software Engineer}
+\address{Rua do Amial 720 Apartment 1.8\\4200-055 Porto\\Portugal}
+
+\mobile{(+351) 934 686 671}
+\email{joao@fraguinha.com}
+\homepage{fraguinha.com}
+\github{fraguinha}
+% \gitlab{fraguinha}
+% \extrainfo{extra information}
+
+% \quote{Emphasis phrase}
+
+% The company being applied to
+\company{Wellhub}
+% The role
+\role{Senior Software Engineer}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The recipient information
+\recipientname{Recruitment Team}
+\recipientaddress{Wellhub}
+
+\lettertitle{Job Application for}
+\letteropening{Dear Recruitment Team,}
+\letterclosing{Sincerely,}
+\letterenclosure[Attached]{Curriculum Vitae}
+
+\begin{document}
+
+% Print the header with above personal information
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[R]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {João Fraga~~~·~~~Cover Letter}
+  {}
+
+% Print the title with above letter information
+\makelettertitle
+
+\begin{cvletter}
+
+I am excited to apply for the \makerole{} position and contribute to your innovative team.
+
+\lettersection{About Me}
+
+I am a software engineer with a proven record of delivering high-impact solutions that drive measurable improvements.
+At my current role, I’ve been consistently promoted, reflecting both my technical expertise and leadership growth.
+I have a strong track record in architecting scalable applications, with knowledge of SQL/NoSQL databases, containerization (Docker, Kubernetes), and designing robust RESTful APIs.
+My background in competitive programming enhances my approach to data structures and complexity analysis, ensuring reliable and efficient solutions.
+I’m excited to bring my experience to new challenges.
+
+\lettersection{Why \makecompany{}}
+
+I am inspired by \makecompany{}’s mission to build a flexible, scalable platform supporting millions globally.
+The challenge of designing systems that balance high availability with the adaptability for evolving commercial models is a perfect fit for my experience in scalable architectures and cloud infrastructure.
+I look forward to contributing to \makecompany{}'s vision and technical goals.
+
+\lettersection{Why me}
+
+With my experience in optimizing high-availability systems, leading scalable application architecture design, and my success in a fin-tech environment handling millions of daily transactions, I am confident I am a strong fit for the \makerole{} role at \makecompany{}.
+I am excited about the opportunity to bring my skills to the team and help tackle meaningful technical challenges that align
+with the company’s mission.
+
+\end{cvletter}
+
+\makeletterclosing
+
+\end{document}
