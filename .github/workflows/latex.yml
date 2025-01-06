@@ -1,0 +1,28 @@
+name: LaTeX
+on:
+  workflow_call:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Compile LaTeX
+        uses: dante-ev/latex-action@latest
+        with:
+          working_directory: ./cv/
+          root_file: ./cv.tex
+          args: -xelatex -f
+
+      - name: Move PDF to Static
+        run: mv ./cv/cv.pdf static/cv.pdf
+
+      - name: Save CV
+        uses: actions/cache/save@v4
+        with:
+          path: ./static/cv.pdf
+          key: ${{ runner.os }}-CV-${{ hashFiles('**/*.tex', '**/*.cls') }}
