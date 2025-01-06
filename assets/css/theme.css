@@ -1,0 +1,146 @@
+@media (prefers-color-scheme: light) {
+  html,
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+
+  textarea {
+    color: #000;
+    background-color: rgb(229, 229, 229);
+    border: 1px solid #ccc;
+    outline: none;
+  }
+
+  input {
+    color: #000;
+    background-color: rgb(229, 229, 229);
+    border: 1px solid #ccc;
+    outline: none;
+  }
+
+  code {
+    background-color: #dfdfdf;
+  }
+
+  button {
+    color: #000;
+    background-color: rgb(229, 229, 229);
+    border: 1px solid #ccc;
+  }
+
+  .footer {
+    color: #444;
+    border-top: 1px solid #ccc;
+  }
+
+  .title {
+    color: #000;
+  }
+
+  .subtitle {
+    color: #000;
+  }
+
+  .profile .name {
+    color: #000;
+  }
+
+  .content .text a:hover {
+    color: #666;
+  }
+
+  .contacts .contact {
+    background: #e8e8e8;
+    color: #535358;
+  }
+
+  .contacts .contact:hover {
+    box-shadow: 0 0 1px 7px rgba(182, 38, 44, 0.15);
+  }
+
+  .actions .action {
+    color: #000;
+  }
+
+  .actions .action:hover {
+    color: #666;
+  }
+
+  .content a .subtitle:hover {
+    color: #666;
+    transition: color 0.5s;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: #222;
+    color: #fff;
+  }
+
+  textarea {
+    color: #fff;
+    background-color: rgb(82, 82, 82);
+    border: 1px solid #666;
+    outline: none;
+  }
+
+  input {
+    color: #fff;
+    background-color: rgb(82, 82, 82);
+    border: 1px solid #666;
+    outline: none;
+  }
+
+  button {
+    color: #fff;
+    background-color: rgb(82, 82, 82);
+    border: 1px solid #666;
+    outline: none;
+  }
+
+  .footer {
+    color: #bbb;
+    border-top: 1px solid #333;
+  }
+
+  .title {
+    color: #fff;
+  }
+
+  .subtitle {
+    color: #fff;
+  }
+
+  .profile .name {
+    color: #fff;
+  }
+
+  .content .text a:hover {
+    color: #fff;
+  }
+
+  .contacts .contact {
+    background: #2f2f2f;
+    color: #acacac;
+  }
+
+  .contacts .contact:hover {
+    box-shadow: 0 0 1px 7px rgba(182, 38, 43, 0.45);
+  }
+
+  .actions .action {
+    color: #fff;
+  }
+
+  .actions .action:hover {
+    color: #999;
+  }
+
+  .content a .subtitle:hover {
+    color: #fff;
+    transition: color 0.5s;
+  }
+}
